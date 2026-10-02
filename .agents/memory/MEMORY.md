@@ -1,0 +1,1 @@
+- [Birthday gift direction](birthday-gift-direction.md) — Affectionate sister/friend tone, not romance; preserve original personal media without stock substitutions.

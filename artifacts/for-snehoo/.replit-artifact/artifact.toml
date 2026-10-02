@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "For Snehoo"
+description = "A personal October 5 birthday scrapbook for Snehoo, featuring seven original photos, two short films, heartfelt wishes, and a final birthday reveal."
+version = "1.0.0"
+id = "artifacts/for-snehoo"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24478
+
+[services.development]
+run = "pnpm --filter @workspace/for-snehoo run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/for-snehoo", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/for-snehoo/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24478"
+BASE_PATH = "/"
